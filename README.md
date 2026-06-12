@@ -57,3 +57,9 @@ Model - Features - ROC-AUC
 
 Logistic Regression - Game state features - AUC = 0.566
 Logistic Regression - Game state features + team/QB categorical features - AUC = .610
+
+## Improved ROC Curve
+
+![Improved ROC Curve](outputs/figures/improved_roc_curve.png)
+
+This serves as the benchmark model for future feature engineering and model improvements.

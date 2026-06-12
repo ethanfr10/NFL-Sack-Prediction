@@ -35,11 +35,11 @@ A baseline logistic regression model was trained using only game state variables
 
 Model | Features | ROC-AUC
 
-Logistic Regression | Game state features | AUC = 0.566
+Logistic Regression | Game state features | AUC = 0.574
 
 ## ROC Curve
 
-<img src="outputs/figures/baseline_roc_curve.png" width="600">
+<img src="outputs/figures/baseline_roc_curve.png" width="500">
 
 This serves as the benchmark model for future feature engineering and model improvements.
 
@@ -55,11 +55,11 @@ This serves as the benchmark model for future feature engineering and model impr
 
 Model | Features | ROC-AUC
 
-Logistic Regression | Game state features | AUC = 0.566
-Logistic Regression | Game state features + team/QB categorical features | AUC = .610
+Logistic Regression | Game state features | AUC = 0.574
+Logistic Regression | Game state features + team/QB categorical features | AUC = .603
 
 ## Improved ROC Curve
 
-<img src="outputs/figures/improved_roc_curve.png" width="600">
+<img src="outputs/figures/improved_roc_curve.png" width="500">
 
 This serves as the new benchmark model for future feature engineering and model improvements.

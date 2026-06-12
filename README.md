@@ -35,7 +35,7 @@ A baseline logistic regression model was trained using only game state variables
 
 Model | Features | ROC-AUC
 
-Logistic Regression | Game state features | AUC = 0.574
+Logistic Regression | Game state features | AUC = 0.584
 
 ## ROC Curve
 
@@ -55,11 +55,56 @@ This serves as the benchmark model for future feature engineering and model impr
 
 Model | Features | ROC-AUC
 
-Logistic Regression | Game state features | AUC = 0.574
-Logistic Regression | Game state features + team/QB categorical features | AUC = .603
+Logistic Regression | Game state features | AUC = 0.584
+Logistic Regression | Game state features + team/QB categorical features | AUC = .597
 
 ## Improved ROC Curve
 
 <img src="outputs/figures/improved_roc_curve.png" width="500">
 
-This serves as the new benchmark model for future feature engineering and model improvements.
+The addition of team and quarterback context improved predictive performance, suggesting that player and team identity contribute meaningful information beyond game state variables alone
+
+## Historical Sack Tendency Features
+
+To better capture perisistent football tendencies, historical sack rate features were engineered using only training-season data (2021-2022):
+
+- Quarterback Sack Rate
+- Offensive Team Sack Rate Allowed
+- Defensive Team Sack Rate ALlowed
+
+These features were designed to represent long-term tendencies while avoiding information leakage from the evaluation season.
+
+## Historical Sack Rate Model
+
+Model | Features | ROC-AUC
+
+Logistic Regression | Game state features | AUC = 0.584
+Logistic Regression | Game state features + team/QB categorical features | AUC = .597
+Logistic Regression | Historical Sack Rate Features | AUC = .605
+
+## Historical Feature ROC Curve
+
+<img src="outputs/figures/improved_roc_curve.png" width="500">
+
+This model directly incorporates football specific tendencies and provides insight into which quarterbacks, offenses, and defenses are most associated with sack outcomes.
+
+## Key Findings
+
+Current results indicate that:
+
+Game-state variables alone provide modest predictive power.
+Team and quarterback identity improve model performance.
+Historical sack tendencies contain additional predictive signal.
+Sack probability appears to be influenced by both situational factors and persistent player/team characteristics.
+
+## Future Work
+
+Planned improvements include:
+
+Gradient Boosting Models
+Historical rolling sack-rate features
+Offensive line performance metrics
+Defensive pass-rush metrics
+Feature importance analysis
+Model calibration and probability evaluation
+Comparison of linear and tree-based models

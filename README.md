@@ -92,21 +92,21 @@ This model directly incorporates football specific tendencies and provides insig
 
 Current results indicate that:
 
-Game-state variables alone provide modest predictive power.
-Team and quarterback identity improve model performance.
-Historical sack tendencies contain additional predictive signal.
-Sack probability appears to be influenced by both situational factors and persistent player/team characteristics.
+- Game-state variables alone provide modest predictive power.
+- Team and quarterback identity improve model performance.
+- Historical sack tendencies contain additional predictive signal.
+- Sack probability appears to be influenced by both situational factors and persistent player/team characteristics.
 
 ## Future Work
 
 Planned improvements include:
 
-Gradient Boosting Models
-Historical rolling sack-rate features
-Offensive line performance metrics
-Defensive pass-rush metrics
-Feature importance analysis
-Model calibration and probability evaluation
-Comparison of linear and tree-based models
+- Gradient Boosting Models
+- Historical rolling sack-rate features
+- Offensive line performance metrics
+- Defensive pass-rush metrics
+- Feature importance analysis
+- Model calibration and probability evaluation
+- Comparison of linear and tree-based models
 
 Current results suggest that sack probability is influenced by both situational factors and persistent team/quarterback tendencies. While historical sack rates improve predictive performance, much of the predictive signal appears to come from game-state variables and quarterback/team context.

@@ -35,7 +35,7 @@ A baseline logistic regression model was trained using only game state variables
 
 Model | Features | ROC-AUC
 
-Logistic Regression | Game state features | AUC = 0.584
+- Logistic Regression | Game state features | AUC = 0.584
 
 ## ROC Curve
 
@@ -55,8 +55,8 @@ This serves as the benchmark model for future feature engineering and model impr
 
 Model | Features | ROC-AUC
 
-Logistic Regression | Game state features | AUC = 0.584
-Logistic Regression | Game state features + team/QB categorical features | AUC = .597
+- Logistic Regression | Game state features | AUC = 0.584
+- Logistic Regression | Game state features + team/QB categorical features | AUC = .597
 
 ## Improved ROC Curve
 
@@ -78,9 +78,9 @@ These features were designed to represent long-term tendencies while avoiding in
 
 Model | Features | ROC-AUC
 
-Logistic Regression | Game state features | AUC = 0.584
-Logistic Regression | Game state features + team/QB categorical features | AUC = .597
-Logistic Regression | Historical Sack Rate Features | AUC = .605
+- Logistic Regression | Game state features | AUC = 0.584
+- Logistic Regression | Game state features + team/QB categorical features | AUC = .597
+- Logistic Regression | Historical Sack Rate Features | AUC = .605
 
 ## Historical Feature ROC Curve
 
@@ -108,3 +108,5 @@ Defensive pass-rush metrics
 Feature importance analysis
 Model calibration and probability evaluation
 Comparison of linear and tree-based models
+
+Current results suggest that sack probability is influenced by both situational factors and persistent team/quarterback tendencies. While historical sack rates improve predictive performance, much of the predictive signal appears to come from game-state variables and quarterback/team context.

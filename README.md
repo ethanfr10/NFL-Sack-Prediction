@@ -10,10 +10,15 @@ Predicting the probability that an NFL pass play results in a sack.
 - Advanced statistics
 
 ## Methods
+
 - Exploratory Data Analysis
 - Feature Engineering
 - Logistic Regression
-- Gradient Boosting
+- Historical Sack Rate Modeling
+- Rolling Season Feature Engineering
+- Advanced Pressure Metrics
+- Probability Calibration
+- Model Evaluation (ROC-AUC & Brier Score)
 
 ## Author
 Ethan Friedman
@@ -220,6 +225,34 @@ Most pass plays received predicted sack probabilities between 3% and 10%, which 
 This represents the primary objective of the project: estimating the probability that a pass play results in a sack before the snap.
 
 <img src="outputs/figures/predicted_sack_probability_distribution.png" width="500">
+
+## Probability Calibration
+
+Because the objective is probability estimation rather than simple classification, calibration was evaluated in addition to ROC-AUC.
+
+Evaluation methods included:
+
+- Calibration Curve
+- Brier Score
+- Probability Bucket Analysis
+
+Results showed that higher predicted sack probabilities corresponded to higher observed sack frequencies.
+
+Brier Score: 0.059
+
+This indicates that the model's probability estimates are reasonably aligned with actual outcomes.
+
+<img src="outputs/figures/calibration_curve.png" width="500">
+
+## Executive Summary
+
+This project developed a machine learning framework for estimating the probability that an NFL pass play results in a sack.
+
+Starting from a baseline model using only game state information, multiple rounds of football specific feature engineering were applied. Historical sack tendencies, rolling season performance metrics, and advanced pressure statistics all improved predictive performance.
+
+The final model achieved a ROC-AUC of 0.614 and a Brier Score of 0.059 while producing reasonably calibrated probability estimates.
+
+Results suggest that quarterback sack tendency, offensive sack tendency, defensive sack tendency, and recent pressure related performance are among the strongest predictors of future sacks.
 
 ## Author
 

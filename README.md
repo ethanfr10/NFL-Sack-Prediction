@@ -112,7 +112,7 @@ This model directly incorporates football specific tendencies and provides insig
 
 ## Key Findings
 
-Current results indicate that:
+Results indicate that:
 
 - Game state variables alone provide modest predictive power.
 - Team and quarterback identity improve model performance.
@@ -138,7 +138,7 @@ ROC-AUC: 0.611
 
 <img src="outputs/figures/rolling_features_roc_curve.png" width="500">
 
-## Current Model Progression
+## Model Progression
 Model | Features | ROC-AUC
 
 - Logistic Regression | Game state features | AUC = 0.584
@@ -146,11 +146,11 @@ Model | Features | ROC-AUC
 - Logistic Regression | Historical Sack Rate Features | AUC = .605
 - Logistic Regression | Pre-Snap + Rolling Features | AUC =	0.611
 
-Current best model: 0.611 ROC-AUC
+Best model: 0.611 ROC-AUC
 
 ## Key Findings
 
-Current results suggest:
+Results suggest:
 
 - Quarterback sack tendency is one of the strongest predictors of sacks.
 - Defensive pass rush tendency provides additional predictive signal.
@@ -158,9 +158,9 @@ Current results suggest:
 - Recent performance and rolling season tendencies improve prediction beyond long term averages.
 - Matchup specific features appear more informative than team identity alone.
 
-## Current Focus
+## Focus
 
-The project is currently focused on integrating advanced pressure metrics, offensive line information, depth chart data, and snap count information to improve predictive performance.
+The project is focused on integrating advanced pressure metrics, offensive line information, depth chart data, and snap count information to improve predictive performance.
 
 Future iterations will evaluate:
 
@@ -193,7 +193,7 @@ All advanced statistics were shifted by one week to avoid data leakage and bette
 
 <img src="outputs/figures/advanced_pressure_features_roc_curve.png" width="500">
 
-## Current Model Progression
+##  Model Progression
 Model | Features | ROC-AUC
 
 - Logistic Regression | Game state features | AUC = 0.584
@@ -202,13 +202,13 @@ Model | Features | ROC-AUC
 - Logistic Regression | Pre-Snap + Rolling Features | AUC =	0.611
 - Logistic Regression | Advanced Pressure Features | AUC = 0.614 
 
-Current best model: 0.614 ROC-AUC
+Best model: 0.614 ROC-AUC
 
-The advanced pressure model is the current best performer, though logistic regression showed some convergence sensitivity as the feature set became more complex.
+The advanced pressure model is the  best performer, though logistic regression showed some convergence sensitivity as the feature set became more complex.
 
 ## Individual Sack Probability Predictions
 
-The current best model was used to generate sack probabilities for individual pass plays.
+The best model was used to generate sack probabilities for individual pass plays.
 
 Example predictions ranged from approximately:
 

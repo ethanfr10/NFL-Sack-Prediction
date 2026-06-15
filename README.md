@@ -189,6 +189,10 @@ Features included:
 
 All advanced statistics were shifted by one week to avoid data leakage and better simulate what would be known before a game.
 
+## Rolling Feature ROC Curve
+
+<img src="outputs/figures/advanced_pressure_features_roc_curve.png" width="500">
+
 ## Current Model Progression
 Model | Features | ROC-AUC
 

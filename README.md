@@ -2,6 +2,14 @@
 
 Predicting the probability that an NFL pass play results in a sack.
 
+## Executive Summary
+
+The final model estimates sack probability before the snap using game situation, quarterback tendencies, offensive tendencies, defensive tendencies, rolling-season performance, and advanced pressure metrics.
+
+The best model achieved a ROC-AUC of 0.614 and a Brier Score of 0.059 while producing reasonably calibrated probability estimates.
+
+Results indicate that quarterback sack tendency, offensive sack tendency, defensive sack tendency, and recent pressure related performance are among the strongest predictors of future sacks.
+
 ## Data Sources
 - Play-by-play data
 - Rosters
@@ -20,8 +28,17 @@ Predicting the probability that an NFL pass play results in a sack.
 - Probability Calibration
 - Model Evaluation (ROC-AUC & Brier Score)
 
-## Author
-Ethan Friedman
+## Final Results
+
+Best Model: Logistic Regression with Historical Tendencies, Rolling Features, and Advanced Pressure Metrics
+
+Performance:
+- ROC-AUC: 0.614
+- Brier Score: 0.059
+
+The model generates calibrated pre snap probabilities that estimate the likelihood a pass play results in a sack.
+
+## TRACKING PERFORMANCE
 
 ## Initial Results
 
@@ -117,28 +134,6 @@ These features increased predictive performance by incorporating recent team and
 
 ROC-AUC: 0.611
 
-## Advanced Pressure Statistics
-
-Weekly advanced statistics were integrated into the modeling dataset:
-
-- Quarterback / Offensive Pressure Metrics
-- Times Sacked
-- Times Pressured
-- Times Hurried
-- Times Hit
-- Times Blitzed
-- Pressure Percentage
-- Defensive Pressure Metrics
-- Defensive Sacks
-- Defensive Pressures
-- Defensive QB Hits
-- Defensive Hurries
-- Defensive Blitzes
-
-To avoid information leakage, all advanced statistics are shifted one week so that only information available prior to each game is used.
-
-This feature set is currently being evaluated.
-
 ## Rolling Feature ROC Curve
 
 <img src="outputs/figures/rolling_features_roc_curve.png" width="500">
@@ -205,7 +200,7 @@ Model | Features | ROC-AUC
 - Logistic Regression | Game state features + team/QB categorical features | AUC = .597
 - Logistic Regression | Historical Sack Rate Features | AUC = .605
 - Logistic Regression | Pre-Snap + Rolling Features | AUC =	0.611
-- Logistic Regression | | Advanced Pressure Features | AUC = 0.614 
+- Logistic Regression | Advanced Pressure Features | AUC = 0.614 
 
 Current best model: 0.614 ROC-AUC
 
@@ -244,15 +239,22 @@ This indicates that the model's probability estimates are reasonably aligned wit
 
 <img src="outputs/figures/calibration_curve.png" width="500">
 
-## Executive Summary
+## Repository Structure
 
-This project developed a machine learning framework for estimating the probability that an NFL pass play results in a sack.
-
-Starting from a baseline model using only game state information, multiple rounds of football specific feature engineering were applied. Historical sack tendencies, rolling season performance metrics, and advanced pressure statistics all improved predictive performance.
-
-The final model achieved a ROC-AUC of 0.614 and a Brier Score of 0.059 while producing reasonably calibrated probability estimates.
-
-Results suggest that quarterback sack tendency, offensive sack tendency, defensive sack tendency, and recent pressure related performance are among the strongest predictors of future sacks.
+├── data/
+│   ├── play_by_play/
+│   ├── advanced_stats/
+│   ├── rosters/
+│   ├── depth_charts/
+│   └── snap_counts/
+│
+├── notebooks/
+│   └── 01_data_exploration.ipynb
+│
+├── outputs/
+│   └── figures/
+│
+└── README.md
 
 ## Author
 

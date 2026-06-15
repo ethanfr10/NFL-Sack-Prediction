@@ -92,7 +92,7 @@ To better capture perisistent football tendencies, historical sack rate features
 
 - Quarterback Sack Rate
 - Offensive Team Sack Rate Allowed
-- Defensive Team Sack Rate ALlowed
+- Defensive Team Sack Rate Allowed
 
 These features were designed to represent long term tendencies while avoiding information leakage from the evaluation season.
 

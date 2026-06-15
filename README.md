@@ -84,7 +84,7 @@ Model | Features | ROC-AUC
 
 ## Historical Feature ROC Curve
 
-<img src="outputs/figures/improved_roc_curve.png" width="500">
+<img src="outputs/figures/historical_features_roc_curve.png" width="500">
 
 This model directly incorporates football specific tendencies and provides insight into which quarterbacks, offenses, and defenses are most associated with sack outcomes.
 
@@ -92,21 +92,87 @@ This model directly incorporates football specific tendencies and provides insig
 
 Current results indicate that:
 
-- Game-state variables alone provide modest predictive power.
+- Game state variables alone provide modest predictive power.
 - Team and quarterback identity improve model performance.
 - Historical sack tendencies contain additional predictive signal.
 - Sack probability appears to be influenced by both situational factors and persistent player/team characteristics.
 
-## Future Work
+## Pre-Snap and Rolling Sack Features
 
-Planned improvements include:
+Additional features were engineered to better simulate real pre-snap prediction:
 
-- Gradient Boosting Models
-- Historical rolling sack-rate features
-- Offensive line performance metrics
-- Defensive pass-rush metrics
+- Season to date quarterback sack rate
+- Season to date offensive sack rate
+- Season to date defensive sack rate
+- Quarterback vs Defense sack risk interaction
+- Offense vs Defense sack risk interaction
+- Shotgun indicator
+
+These features increased predictive performance by incorporating recent team and quarterback tendencies.
+
+ROC-AUC: 0.611
+
+## Advanced Pressure Statistics
+
+Weekly advanced statistics were integrated into the modeling dataset:
+
+- Quarterback / Offensive Pressure Metrics
+- Times Sacked
+- Times Pressured
+- Times Hurried
+- Times Hit
+- Times Blitzed
+- Pressure Percentage
+- Defensive Pressure Metrics
+- Defensive Sacks
+- Defensive Pressures
+- Defensive QB Hits
+- Defensive Hurries
+- Defensive Blitzes
+
+To avoid information leakage, all advanced statistics are shifted one week so that only information available prior to each game is used.
+
+This feature set is currently being evaluated.
+
+## Rolling Feature ROC Curve
+
+<img src="outputs/figures/rolling_features_roc_curve.png" width="500">
+
+## Current Model Progression
+Model | Features | ROC-AUC
+
+- Logistic Regression | Game state features | AUC = 0.584
+- Logistic Regression | Game state features + team/QB categorical features | AUC = .597
+- Logistic Regression | Historical Sack Rate Features | AUC = .605
+- Logistic Regression | Pre-Snap + Rolling Features | AUC =	0.611
+
+Current best model: 0.611 ROC-AUC
+
+## Key Findings
+
+Current results suggest:
+
+- Quarterback sack tendency is one of the strongest predictors of sacks.
+- Defensive pass rush tendency provides additional predictive signal.
+- Situational football context remains important.
+- Recent performance and rolling season tendencies improve prediction beyond long term averages.
+- Matchup specific features appear more informative than team identity alone.
+
+## Current Focus
+
+The project is currently focused on integrating advanced pressure metrics, offensive line information, depth chart data, and snap count information to improve predictive performance.
+
+Future iterations will evaluate:
+
+- Advanced pressure features
+- Offensive line continuity metrics
+- Snap-count based personnel features
+- Depth-chart features
+- Model calibration
 - Feature importance analysis
-- Model calibration and probability evaluation
-- Comparison of linear and tree-based models
+- Alternative machine learning models
 
-Current results suggest that sack probability is influenced by both situational factors and persistent team/quarterback tendencies. While historical sack rates improve predictive performance, much of the predictive signal appears to come from game-state variables and quarterback/team context.
+
+## Author
+
+Ethan Friedman

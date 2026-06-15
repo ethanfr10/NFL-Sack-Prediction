@@ -204,6 +204,23 @@ Model | Features | ROC-AUC
 
 Current best model: 0.614 ROC-AUC
 
+The advanced pressure model is the current best performer, though logistic regression showed some convergence sensitivity as the feature set became more complex.
+
+## Individual Sack Probability Predictions
+
+The current best model was used to generate sack probabilities for individual pass plays.
+
+Example predictions ranged from approximately:
+
+- 1% for low-risk situations
+- One 70%+ for an extreme high-risk situations
+
+Most pass plays received predicted sack probabilities between 3% and 10%, which aligns with observed NFL sack frequencies.
+
+This represents the primary objective of the project: estimating the probability that a pass play results in a sack before the snap.
+
+<img src="outputs/figures/predicted_sack_probability_distribution.png" width="500">
+
 ## Author
 
 Ethan Friedman

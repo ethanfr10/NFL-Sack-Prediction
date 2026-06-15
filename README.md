@@ -239,23 +239,6 @@ This indicates that the model's probability estimates are reasonably aligned wit
 
 <img src="outputs/figures/calibration_curve.png" width="500">
 
-## Repository Structure
-
-├── data/
-│   ├── play_by_play/
-│   ├── advanced_stats/
-│   ├── rosters/
-│   ├── depth_charts/
-│   └── snap_counts/
-│
-├── notebooks/
-│   └── 01_data_exploration.ipynb
-│
-├── outputs/
-│   └── figures/
-│
-└── README.md
-
 ## Author
 
 Ethan Friedman

@@ -172,6 +172,33 @@ Future iterations will evaluate:
 - Feature importance analysis
 - Alternative machine learning models
 
+## Advanced Pressure Metrics
+
+Weekly advanced quarterback/offensive pressure metrics and defensive pressure metrics were added to the modeling dataset.
+
+Features included:
+
+- Previous week times sacked
+- Previous week times pressured
+- Previous week times hurried
+- Previous week times hit
+- Previous week pressure percentage
+- Previous week defensive sacks
+- Previous week defensive pressures
+- Previous week defensive QB hits
+
+All advanced statistics were shifted by one week to avoid data leakage and better simulate what would be known before a game.
+
+## Current Model Progression
+Model | Features | ROC-AUC
+
+- Logistic Regression | Game state features | AUC = 0.584
+- Logistic Regression | Game state features + team/QB categorical features | AUC = .597
+- Logistic Regression | Historical Sack Rate Features | AUC = .605
+- Logistic Regression | Pre-Snap + Rolling Features | AUC =	0.611
+- Logistic Regression | | Advanced Pressure Features | AUC = 0.614 
+
+Current best model: 0.614 ROC-AUC
 
 ## Author
 

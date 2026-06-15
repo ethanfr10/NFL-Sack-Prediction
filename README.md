@@ -69,7 +69,7 @@ This serves as the benchmark model for future feature engineering and model impr
 
 - Add offensive and defensive team features
 - Incorporate quarterback sack tendencies
-- Engineer historical pass-rush metrics
+- Engineer historical pass rush metrics
 - Train Gradient Boosting models
 - Compare feature importance across models
 
@@ -88,13 +88,13 @@ The addition of team and quarterback context improved predictive performance, su
 
 ## Historical Sack Tendency Features
 
-To better capture perisistent football tendencies, historical sack rate features were engineered using only training-season data (2021-2022):
+To better capture perisistent football tendencies, historical sack rate features were engineered using only training season data (2021-2022):
 
 - Quarterback Sack Rate
 - Offensive Team Sack Rate Allowed
 - Defensive Team Sack Rate ALlowed
 
-These features were designed to represent long-term tendencies while avoiding information leakage from the evaluation season.
+These features were designed to represent long term tendencies while avoiding information leakage from the evaluation season.
 
 ## Historical Sack Rate Model
 
@@ -121,7 +121,7 @@ Current results indicate that:
 
 ## Pre-Snap and Rolling Sack Features
 
-Additional features were engineered to better simulate real pre-snap prediction:
+Additional features were engineered to better simulate real pre snap prediction:
 
 - Season to date quarterback sack rate
 - Season to date offensive sack rate
@@ -212,8 +212,8 @@ The current best model was used to generate sack probabilities for individual pa
 
 Example predictions ranged from approximately:
 
-- 1% for low-risk situations
-- One 70%+ for an extreme high-risk situations
+- 1% for low risk situations
+- One 70%+ for an extreme high risk situations
 
 Most pass plays received predicted sack probabilities between 3% and 10%, which aligns with observed NFL sack frequencies.
 

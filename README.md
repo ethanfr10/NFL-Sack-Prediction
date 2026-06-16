@@ -67,14 +67,6 @@ Model | Features | ROC-AUC
 
 This serves as the benchmark model for future feature engineering and model improvements.
 
-## Next Steps
-
-- Add offensive and defensive team features
-- Incorporate quarterback sack tendencies
-- Engineer historical pass rush metrics
-- Train Gradient Boosting models
-- Compare feature importance across models
-
 ## Improved Performance
 
 Model | Features | ROC-AUC
@@ -111,15 +103,6 @@ Model | Features | ROC-AUC
 <img src="outputs/figures/historical_features_roc_curve.png" width="500">
 
 This model directly incorporates football specific tendencies and provides insight into which quarterbacks, offenses, and defenses are most associated with sack outcomes.
-
-## Key Findings
-
-Results indicate that:
-
-- Game state variables alone provide modest predictive power.
-- Team and quarterback identity improve model performance.
-- Historical sack tendencies contain additional predictive signal.
-- Sack probability appears to be influenced by both situational factors and persistent player/team characteristics.
 
 ## Pre-Snap and Rolling Sack Features
 

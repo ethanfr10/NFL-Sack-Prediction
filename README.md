@@ -206,6 +206,26 @@ Best model: 0.614 ROC-AUC
 
 The advanced pressure model is the  best performer, though logistic regression showed some convergence sensitivity as the feature set became more complex.
 
+## Feature Importance
+
+To better understand what drives sack probability predictions, the coefficients from the final logistic regression model were examined.
+
+Quarterback sack tendency emerged as the strongest predictor, followed by offensive sack tendencies, rolling season sack rates, and defensive sack generation.
+
+These results suggest that sacks are heavily influenced by persistent quarterback and offensive behaviors, while defensive pressure metrics provide additional predictive signal.
+
+### Most Influential Features
+
+<img src="outputs/figures/feature_importance.png" width="700">
+
+### Key Findings
+
+- Quarterback sack rate was the strongest predictor in the final model.
+- Offensive sack tendencies were highly predictive of future sacks.
+- Rolling season performance provided additional signal beyond historical averages.
+- Defensive sack rates remained important after controlling for game state.
+- Matchup-specific risk features improved prediction but were less influential than quarterback tendencies.
+
 ## Individual Sack Probability Predictions
 
 The best model was used to generate sack probabilities for individual pass plays.

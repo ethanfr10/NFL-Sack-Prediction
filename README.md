@@ -205,6 +205,8 @@ Model | Features | ROC-AUC
 
 Best model: 0.614 ROC-AUC
 
+<img src="outputs/figures/model_progression.png" width="500">
+
 The advanced pressure model is the  best performer, though logistic regression showed some convergence sensitivity as the feature set became more complex.
 
 ### Most Influential Features

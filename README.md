@@ -1,6 +1,8 @@
-# Swish Analytics Data Modeling Challenge
+# Predicting NFL Sack Probability: A Pre-Snap Machine Learning Approach
 
 Predicting the probability that an NFL pass play results in a sack.
+
+## Swish Analytics Data Modeling Challenge
 
 ## Executive Summary
 
@@ -38,7 +40,7 @@ Performance:
 
 The model generates calibrated pre snap probabilities that estimate the likelihood a pass play results in a sack.
 
-## TRACKING PERFORMANCE
+## Model Development Timeline
 
 ## Initial Results
 
@@ -158,19 +160,18 @@ Results suggest:
 - Recent performance and rolling season tendencies improve prediction beyond long term averages.
 - Matchup specific features appear more informative than team identity alone.
 
-## Focus
+## Future Improvements
 
 The project is focused on integrating advanced pressure metrics, offensive line information, depth chart data, and snap count information to improve predictive performance.
 
-Future iterations will evaluate:
+Potential future improvements include:
 
-- Advanced pressure features
-- Offensive line continuity metrics
-- Snap-count based personnel features
-- Depth-chart features
-- Model calibration
-- Feature importance analysis
-- Alternative machine learning models
+- Offensive line player-level metrics
+- Individual pass-rusher metrics
+- Personnel grouping features
+- Coverage and blitz indicators
+- Tracking-data features
+- Tree-based machine learning models
 
 ## Advanced Pressure Metrics
 
@@ -206,14 +207,6 @@ Best model: 0.614 ROC-AUC
 
 The advanced pressure model is the  best performer, though logistic regression showed some convergence sensitivity as the feature set became more complex.
 
-## Feature Importance
-
-To better understand what drives sack probability predictions, the coefficients from the final logistic regression model were examined.
-
-Quarterback sack tendency emerged as the strongest predictor, followed by offensive sack tendencies, rolling season sack rates, and defensive sack generation.
-
-These results suggest that sacks are heavily influenced by persistent quarterback and offensive behaviors, while defensive pressure metrics provide additional predictive signal.
-
 ### Most Influential Features
 
 <img src="outputs/figures/feature_importance.png" width="700">
@@ -229,11 +222,6 @@ These results suggest that sacks are heavily influenced by persistent quarterbac
 ## Individual Sack Probability Predictions
 
 The best model was used to generate sack probabilities for individual pass plays.
-
-Example predictions ranged from approximately:
-
-- 1% for low risk situations
-- One 70%+ for an extreme high risk situations
 
 Most pass plays received predicted sack probabilities between 3% and 10%, which aligns with observed NFL sack frequencies.
 
@@ -258,6 +246,41 @@ Brier Score: 0.059
 This indicates that the model's probability estimates are reasonably aligned with actual outcomes.
 
 <img src="outputs/figures/calibration_curve.png" width="500">
+
+## Feature Importance
+
+To better understand what drives sack probability predictions, the coefficients from the final logistic regression model were examined.
+
+Quarterback sack tendency emerged as the strongest predictor, followed by offensive sack tendencies, rolling season sack rates, and defensive sack generation.
+
+These results suggest that sacks are heavily influenced by persistent quarterback and offensive behaviors, while defensive pressure metrics provide additional predictive signal.
+
+## Interpreting Sack Probability Predictions
+
+The final model was used to estimate sack probabilities for individual pass plays.
+
+Key findings:
+
+- Average NFL pass play: ~6% sack probability
+- High risk passing situations generated substantially higher predicted probabilities
+- Low risk passing situations generated substantially lower predicted probabilities
+- Quarterback sack tendency, offensive sack tendency, and defensive pass rush strength were the strongest contributors to elevated sack risk
+
+<img src="outputs/figures/scenario_probabilities.png" width="500">
+
+This section demonstrates the practical application of the model by translating predictions into football-specific scenarios rather than focusing solely on model performance metrics.
+
+## Conclusion
+
+This project developed a machine learning framework for estimating the probability that an NFL pass play results in a sack before the snap.
+
+Starting with game state variables alone, multiple rounds of football specific feature engineering were applied, including historical sack tendencies, rolling season performance metrics, matchup risk indicators, and advanced pressure statistics.
+
+The final model achieved a ROC-AUC of 0.614 and a Brier Score of 0.059 while producing calibrated probability estimates for individual pass plays.
+
+Results suggest that quarterback sack tendency, offensive protection performance, defensive pass rush strength, and recent pressure related trends are among the strongest predictors of future sacks.
+
+Most importantly, the final model successfully answers the original challenge question by generating pre snap sack probabilities for individual NFL pass plays.
 
 ## Author
 
